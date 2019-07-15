@@ -31,11 +31,35 @@
         justify-content: center;
         padding-left: 5%;
       }
+
+      footer {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        bottom: 1vh;
+        font-size: 1vh;
+        text-align: center;
+        width: 100%;
+      }
+
+      a {
+        color: #600;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
     <main id="poem"></main>
-
+    <footer>
+      built by <a href="https://twitter.com/joelalejandro">@joelalejandro</a> |
+      powered by
+      <a href="https://noopschallenge.com/challenges/wordbot">wordbot</a> |
+      <a href="https://github.com/joelalejandro/carmen">github</a>
+    </footer>
     <script>
       fetch(
         new Request("/api/poem", {
