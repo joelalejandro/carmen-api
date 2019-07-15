@@ -8,32 +8,14 @@
       rel="stylesheet"
     />
     <style>
-      text {
+      body {
         font-family: "DM Serif Display", serif;
-      }
-
-      svg,
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-      }
-
-      body {
-        overflow: hidden;
-      }
-
-      svg {
-        position: absolute;
-        left: 20%;
-        top: 10%;
+        font-size: 10vh;
       }
     </style>
   </head>
   <body>
-    <svg>
-      <text id="poem" x="0" y="0" font-size="80" dy="0"></text>
-    </svg>
+    <main id="poem"></main>
 
     <script>
       fetch(
@@ -47,11 +29,7 @@
           document.getElementById(
             "poem"
           ).innerHTML = json.data.attributes.lines
-            .map(
-              line =>
-                `<tspan x='${Math.floor(Math.random() * 10) *
-                  15}' dy='1.2em'>${line}</tspan>`
-            )
+            .map(line => `<div>${line}</div>`)
             .join("");
         });
     </script>
