@@ -9,7 +9,7 @@
     { "src": "/", "dest": "/src/frontend/index.html" }
   ],
   "builds": [
-    { "src": "*.ts", "use": "@now/node" },
-    { "src": "*.html", "use": "@now/static" }
+    { "src": "**/*.ts", "use": "@now/node" },
+    { "src": "**/*.html", "use": "@now/static" }
   ]
 }
