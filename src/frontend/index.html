@@ -20,7 +20,7 @@
   </head>
   <body>
     <svg>
-      <text id="poem" x="0" y="0" font-size="20" dy="0"></text>
+      <text id="poem" x="0" y="0" font-size="80" dy="0"></text>
     </svg>
 
     <script>
@@ -34,9 +34,9 @@
         .then(json => {
           document.getElementById(
             "poem"
-          ).innerHTML = json.data.attributes.lines.map(
-            line => `<tspan x='0' dy='1.2em'>${line}</tspan>`
-          );
+          ).innerHTML = json.data.attributes.lines
+            .map(line => `<tspan x='0' dy='1.2em'>${line}</tspan>`)
+            .join("");
         });
     </script>
   </body>
