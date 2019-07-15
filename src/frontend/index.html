@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>| she is carmen |</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      text {
+        font-family: "DM Serif Display", serif;
+      }
+
+      svg {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <text id="poem" x="0" y="0" font-size="20" dy="0"></text>
+    </svg>
+
+    <script>
+      fetch(
+        new Request("/api/poem", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" }
+        })
+      )
+        .then(response => response.json())
+        .then(json => {
+          document.getElementById(
+            "poem"
+          ).innerHTML = json.data.attributes.lines.map(
+            line => `<tspan x='0' dy='1.2em'>${line}</tspan>`
+          );
+        });
+    </script>
+  </body>
+</html>

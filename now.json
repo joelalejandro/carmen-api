@@ -3,12 +3,19 @@
   "version": 2,
   "builds": [
     {
-      "src": "./src/**/*.ts",
+      "src": "./src/backend/**/*.ts",
       "use": "@now/node@canary"
+    },
+    {
+      "src": "./src/frontend/**/*",
+      "use": "@now/static"
     }
   ],
   "env": {
     "IS_NOW": "true"
   },
-  "routes": [{ "src": "/(.*)", "dest": "/src/app" }]
+  "routes": [
+    { "src": "/api/poem", "dest": "/src/backend/poem" },
+    { "src": "/", "dest": "/src/frontend/index.html" }
+  ]
 }

@@ -28,7 +28,6 @@
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "koa": "^2.7.0",
-    "logepi": "^1.0.8",
-    "she-is-carmen": "^0.0.5"
+    "she-is-carmen": "^0.0.7"
   }
 }
