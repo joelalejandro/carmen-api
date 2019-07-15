@@ -1,3 +1,3 @@
 # `carmen-api`
 
-An API for the [carmen](joelalejandro/carmen) project.
+A virtual home for [Carmen](https://github.com/joelalejandro/carmen).
