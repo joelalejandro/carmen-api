@@ -1,21 +1,15 @@
 {
   "name": "she-is-carmen-api",
   "version": 2,
-  "builds": [
-    {
-      "src": "./src/backend/**/*.ts",
-      "use": "@now/node@canary"
-    },
-    {
-      "src": "./src/frontend/**/*",
-      "use": "@now/static"
-    }
-  ],
   "env": {
     "IS_NOW": "true"
   },
   "routes": [
-    { "src": "/api/poem", "dest": "/src/backend/poem" },
+    { "src": "/api/poem", "dest": "/src/backend/poem.ts", "methods": ["POST"] },
     { "src": "/", "dest": "/src/frontend/index.html" }
+  ],
+  "builds": [
+    { "src": "*.ts", "use": "@now/node" },
+    { "src": "*.html", "use": "@now/static" }
   ]
 }
